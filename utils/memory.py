@@ -1,6 +1,21 @@
 
-import os
+import os 
 
+history=[]
+ 
+ #function to add entry to history#
+
+def add_to_history(calculation):
+    history.append(calculation)
+ #function to display all history#
+
+def show_history():
+    if not history:
+        print("no history yet.")
+    else:
+        print("calculation history:")
+        for item in history:
+            print(item)   
 
 def update_history(operations: str):
     """Replace operation word with symbols and saves them to a history file."""
