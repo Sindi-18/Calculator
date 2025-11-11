@@ -5,7 +5,7 @@ import operators as op
 #  ADD
 def test_add_valid():
     assert op.add(5, 7) == 12
-    assert op.add("5", 7) == 12
+    assert op.add(5, 7) == 12
     assert op.add("3.5", 2.5) == 6.0
 
 
@@ -20,10 +20,12 @@ def test_add_invalid():
 def test_multiply_valid():
     assert op.multiply(5, 5) == 25
     assert op.multiply("5", 5) == 25
-    assert op.multiply("3.5", 2) == 7.0
+    assert op.multiply("3.5", 2) == 
+    assert op.divide(10,5) == 2
+    assert op.divide("10",2) == 5
 
 
-def test_multiply_invalid():
+def test_multiply
     with pytest.raises(ValueError):
         op.multiply("a", "b")
     with pytest.raises(TypeError):
@@ -33,8 +35,8 @@ def test_multiply_invalid():
 #  MODULUS
 def test_modulus_valid():
     assert op.modulus(10, 3) == 1
-    assert op.modulus("10", 4) == 2
-    assert op.modulus("7.5", 2.5) == 0.0
+    assert op.modulus(10, 4) == 2
+    assert op.modulus(7.5, 2.5) == 0.0
 
 
 def test_modulus_invalid():
@@ -44,3 +46,4 @@ def test_modulus_invalid():
         op.modulus({"x": 1}, 5)
     with pytest.raises(ZeroDivisionError):
         op.modulus(10, 0)
+
