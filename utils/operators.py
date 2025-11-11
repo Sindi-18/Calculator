@@ -19,6 +19,10 @@ def to_numbers(value):
     # If it's not a number or string at all
     raise TypeError(f"Invalid input type: {type(value).__name__}")
 
+def add(x, y):
+    x = to_numbers(x)
+    y = to_numbers(y)
+    return x + y
 
 def multiply(x, y):
     # Added function to enable me to safely convert string to numbers
@@ -36,3 +40,14 @@ def divide(x, y):
     y = to_numbers(y)
 
     return x / y
+# modulus remainder of division
+
+
+def modulus(x, y):
+    if y == 0:
+        return ZeroDivisionError
+    if isinstance(x,str) or isinstance(y,str):
+        return ValueError
+    x = to_numbers(x)
+    y = to_numbers(y)
+    return x % y
